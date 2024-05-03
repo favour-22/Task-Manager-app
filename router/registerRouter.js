@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         password: hash
     })
-    newUser.save()
+    new User.save()
         .then(() => {
             console.log('User saved successfully');
         })

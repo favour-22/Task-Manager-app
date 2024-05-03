@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TASK</title>
+</head>
+
+<body>
+
+
+    <div class="main">
+        <h2>Create a new task</h2>
+        <form method="post" action="/auth/task">
+            <b>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+                <br><br>
+                <label for="taskDescription">Description:</label>
+                <textarea id="taskDescription" name="taskDescription"></textarea>
+                <br><br>
+                <label for="taskDueDate">Due Date:</label>
+                <input type="date" id="taskDueDate" name="taskDueDate">
+                <br><br>
+                <label for="taskStartTime">Start Time:</label>
+                <input type="time" id="taskStartTime" name="taskStartTime">
+                <input type="radio" id="start-am" name="start-am-pm" value="am" checked>
+                <label for="start-am">AM</label>
+                <input type="radio" id="start-pm" name="start-am-pm" value="pm">
+                <label for="start-pm">PM</label>
+                <br><br>
+                <label for="taskEndTime">End Time:</label>
+                <input type="time" id="taskEndTime" name="taskEndTime">
+                <input type="radio" id="end-am" name="end-am-pm" value="am" checked>
+                <label for="end-am">AM</label>
+                <input type="radio" id="end-pm" name="end-am-pm" value="pm">
+                <label for="end-pm">PM</label>
+                <br><br>
+                <label for="taskReminderDate">Reminder Date:</label>
+                <input type="date" id="taskReminderDate" name="taskReminderDate">
+                <br><br>
+                <label for="taskPriority">Priority:</label>
+                <select id="taskPriority" name="taskPriority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <br><br>
+                <label for="taskLabels">Labels:</label>
+                <input type="text" id="taskLabels" name="taskLabels">
+                <br><br>
+                <button type="submit" onclick="showAlert()">Create Task</button>
+                <script> function showAlert() {
+                        alert("Task edited!")
+                    }

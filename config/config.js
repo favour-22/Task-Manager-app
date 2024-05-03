@@ -11,24 +11,29 @@ const registerRouter = require('../router/registerRouter');
 const loginRouter = require('../router/loginrouter');
 const connectDb = require('../config/db')
 const errHandler = require('../middlewares/errHandler')
+const successful = require('../router/successfulRouter')
+const savetask = require('../router/save-taskRouter')
 
 
 
-//const cors = require('cors')
-connectDb()
+//Starting the databse
+//connectDb()
 //app.use(cors());
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyparser.json())
 app.use(express.static('public'));
+
 //app.use(errHandler())
 
 
-app.use('/api/home', homeRouter)
+app.use('/', homeRouter)
 app.use('/api/', router)
 app.use('/auth/login', loginRouter)
 app.use('/auth/register', registerRouter,)
+app.use('/auth/v1/home', successful)
+app.use('/auth/task', savetask)
 
 
 
