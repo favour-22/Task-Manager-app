@@ -3,14 +3,26 @@
 
 <head>
     <title>TASK</title>
+    <link rel="stylesheet" href="/css/successful.css">
 </head>
-
 <body>
 
-
-    <div class="main">
-        <h2>Create a new task</h2>
-        <form method="post" action="/auth/task">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="/" class="home"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#" class="all-tasks"><i class="fa fa-tasks"></i> All Tasks</a></li>
+            <li><a href="#" class="new-task"><i class="fa fa-plus"></i> New Task</a></li>
+            <li><a href="#" class="delete-task"><i class="fa fa-trash"></i> Delete Task</a></li>
+            <li><a href="#" class="settings"><i class="fa fa-cog"></i> Settings</a></li>
+            <li><a href="/auth/task/show" class="show-task"><i class="fa fa-cog"></i> Show Task</a></li>
+            <li><a href="/logout" class="logout"><i class="fa fa-cog"></i> Logout</a></li>
+        </ul>
+    </div>
+    <!-- Main Page -->
+    <div class="main-page">
+        <h1>Task Hub</h1>
+        <form method="post" action="/auth/task/show">
             <b>
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title">
@@ -50,5 +62,10 @@
                 <br><br>
                 <button type="submit" onclick="showAlert()">Create Task</button>
                 <script> function showAlert() {
-                        alert("Task edited!")
+                        alert("Task Created!")
                     }
+                </script>
+
+
+    </div>
+</body>

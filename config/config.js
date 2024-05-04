@@ -17,7 +17,7 @@ const savetask = require('../router/save-taskRouter')
 
 
 //Starting the databse
-//connectDb()
+connectDb()
 //app.use(cors());
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -33,7 +33,7 @@ app.use('/api/', router)
 app.use('/auth/login', loginRouter)
 app.use('/auth/register', registerRouter,)
 app.use('/auth/v1/home', successful)
-app.use('/auth/task', savetask)
+app.use('/auth/task/show', savetask)
 
 
 
