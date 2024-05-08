@@ -1,28 +1,28 @@
-// const User = require('../models/user-models');
-// const compareHash = require('../utils/pass-utils');
+const User = require('../models/user-models');
+const compareHash = require('../utils/pass-utils');
 
-// async function authenticateUser(name) {
-//   try {
-//     const user = await User.findOne({ name });
+async function authenticateUser(name) {
+  try {
+    const user = await User.findOne({ name });
 
-//     if (!user) {
-//       throw new Error('Invalid name');
-//     }
+    if (!user) {
+      throw new Error('Invalid name');
+    }
 
-//     return user;
-//   } catch (error) {
-//     throw error;
-//   }
-// }
+    return user;
+  } catch (error) {
+    throw error;
+  }
+}
 
-// async function authenticatePass(user, password) {
-//   try {
-//     const isPasswordValid = await compareHash(password, user.password);
+async function authenticatePass(user, password) {
+  try {
+    const isPasswordValid = await compareHash(password, user.password);
 
-//     return isPasswordValid;
-//   } catch (error) {
-//     throw error;
-//   }
-// }
+    return isPasswordValid;
+  } catch (error) {
+    throw error;
+  }
+}
 
-// module.exports = { authenticateUser, authenticatePass };
+module.exports = { authenticateUser, authenticatePass };

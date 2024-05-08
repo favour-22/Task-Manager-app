@@ -3,6 +3,7 @@ const app = express()
 const dotenv = require('dotenv').config()
 const port = process.env.port || 8000
 const bodyparser = require('body-parser')
+require('dotenv').config();
 
 
 const homeRouter = require('../router/homerouter')
@@ -10,14 +11,15 @@ const router = require('../router/router')
 const registerRouter = require('../router/registerRouter');
 const loginRouter = require('../router/loginrouter');
 const connectDb = require('../config/db')
-const errHandler = require('../middlewares/errHandler')
+//const errHandler = require('../middlewares/errHandler')
 const successful = require('../router/successfulRouter')
 const savetask = require('../router/save-taskRouter')
 
 
 
 //Starting the databse
-connectDb()
+uri = process.env.MONGODB_URI
+connectDb(uri)
 //app.use(cors());
 app.set('view engine', 'ejs');
 app.use(express.static('public'));

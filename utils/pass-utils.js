@@ -10,5 +10,4 @@ const compareHash = async function compareHash(password, passwordHash) {
     return bcrypt.compare(password, passwordHash);
 };
 
-
 module.exports = hashPassword, compareHash;
