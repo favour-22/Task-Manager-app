@@ -8,7 +8,7 @@ const flash = require('express-flash')
 const cookieParser = require('cookie-parser')
 
 
-app.use(cookieParser())
+router.use(cookieParser())
 
 //app.use(flash());
 
