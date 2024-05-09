@@ -6,6 +6,7 @@ const User = require('../models/user-models');
 require('dotenv').config();
 const flash = require('express-flash')
 const cookieParser = require('cookie-parser')
+const jwt = require('jsonwebtoken');
 
 
 router.use(cookieParser())
