@@ -17,10 +17,9 @@ const savetask = require('../router/save-taskRouter')
 
 
 
-//Starting the databse
+//Starting the databseS
 uri = process.env.MONGODB_URI
-connectDb(uri)
-//app.use(cors());
+connectDb(uri);
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
